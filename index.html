@@ -5,12 +5,74 @@
 <!-- meta tags, links to css, etc. -->
 <title>DIG 245 Everyone ♥ Math</title>
 <h1>Emily Schmitt and Caroline Sigl</h1>
-<hi>Hey what's up?</h2>
+
+
 </head>
 <body>
 
 <!-- visible content goes here -->
 <h1>DIG 245 Everyone ♥ Math</h1>
 
+<!-- 1/8 form -->
+<p>Welcome to the fractions bakery! It's a great day to eat some cake, but there's only
+  a little bit left! In fractions, how much of the cake is left?<p>
+
+<form>
+  <label for="question1">Question 1</label>
+<select id="question1">
+  <option value="none"></option>
+  <option value="1/4">1/4</option>
+    <option value="1/3">1/3</option>
+      <option value="1/8">1/8</option>
+      <option value="1/6">1/6</option>
+    </select>
+</form>
+
+<!-- 1/4 form -->
+<p>You didn't get a lot of cake yesterday, so you're back! You're picking up a cake and there's a little bit
+  more today! How much cake can you buy?</p>
+
+<form>
+  <label for="question2">Question 2</label>
+<select id="question2">
+  <option value="none"></option>
+  <option value="1/4">1/4</option>
+    <option value="1/5">1/5</option>
+      <option value="2/6">2/6</option>
+      <option value="1/3">1/3</option>
+    </select>
+</form>
+
+<!-- 1/2 form -->
+<p>You didn't get a lot of cake yesterday, so you're back! You're picking up a cake and there's a little bit
+  more today! How much cake can you buy?</p>
+
+<form>
+  <label for="question3">Question 3</label>
+<select id="question3">
+  <option value="none"></option>
+  <option value="3/4">3/4</option>
+    <option value="2/5">2/5</option>
+      <option value="7/8">7/8</option>
+      <option value="1/2">1/2</option>
+    </select>
+</form>
+
 </body>
 </html>
+
+ <script>
+ var bananas = document.getElementById("bananas");
+
+ window.onload = function() {
+
+   bananas.addEventListener ("input", function () {
+     console.log(bananas.value);
+
+     updatePage();
+   }
+
+ }
+
+
+ </script>
