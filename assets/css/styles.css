@@ -1,2 +1,20 @@
 
-/* css */
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image1{
+  position:absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+}
+.image2{
+  position:absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 2;
+
+}
