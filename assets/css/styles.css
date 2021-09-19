@@ -6,15 +6,33 @@
   width: 700px;
 }
 .image1{
-  position:absolute;
+  position: absolute;
   top: 25px;
   left: 25px;
   z-index: 1;
 }
 .image2{
-  position:absolute;
+  position: absolute;
   top: 25px;
   left: 25px;
   z-index: 2;
 
 }
+
+form {
+  position: absolute;
+  right: 300px;
+  bottom: 400px;
+}
+
+ p {
+   position: absolute;
+   top: 120px;
+    left: 25px;
+ }
+
+ .button {
+   position: absolute;
+   right: 300px;
+    bottom: 350px;
+ }
