@@ -22,8 +22,8 @@
   <h1>DIG 245 Everyone ♥ Math</h1>
 
 <div class="parent">
-  <img class="image2" src="assets/img/divisions.png" />
-  <img class="image1" src="assets/img/1_8_cake_tester.png"/>
+  <img class="image2" src="assets/img/divisions.png" id="divisions"/>
+  <img class="image1" src="assets/img/1_8_cake.png" id="cake"/>
 </div>
 <!--
 <div>
@@ -112,51 +112,19 @@ more regulated pans, so you can buy this much cake. How much is it?</p>
     </select>
 </form>
 
-<script>
-​
-       // store a reference to the bananas input element
-       var bananas = document.getElementById("bananas");
-       // add an on load listener to the page
-       window.onload = function() {
-           // add an input event listener to bananas input
-           bananas.addEventListener("input", function() {
-               // log
-               console.log(bananas.value);
-               // call the updatePage function
-               updatePage();
-           });
-       }
-​
-       // update visual stuff on the page
-       function updatePage(){
-           // store the vaalue of bananas (*3) inside the #bananasValue element
-           document.getElementById("bananasValue").innerText = bananas.value * 3;
-       }
-​
-   </script>
 
    <br>
-   <input type="submit" value="submit answers"></input>
+   <input type="submit" value="submit answers" onclick="javascript:changeText(1); return false;"></input>
 
 </body>
 </html>
-<!--
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
 
 <script>
 
-  var bananas = document.getElementById("bananas");
-
-  window.onload = function(){
-    bananas.addEventListener("input", function(){
-      console.log(bananas.value);
-      updatePage();
-    });
-  }
-
-
-  function updatePage(){
-    document.getElementById("bananasValue").innerText = bananas.value;
-  }
-</script> -->
+function changeText(idElement) {
+if(idElement==1){
+  document.getElementById("cake").src ="assets/img/1_4_cake.png"; // removed extra }
+  return false;
+}
+}
+</script>
