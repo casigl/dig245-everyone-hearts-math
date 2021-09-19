@@ -1,6 +1,13 @@
-<!doctype html>
+<!-- This file creates a website that teaches fractions.
+Authors: Caroline Sigl and Emily Schmitt
+Date: September 19, 2021
+Time spent: 8 hours -->
+
+<!Doctype html>
 <html lang="en">
 <head>
+
+<title>Everyone ♥ Math</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,34 +15,36 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-<link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="css/bootstrap.css"/>
-<link rel="stylesheet" href="js/bootstrap.js"/>
-
-<!-- meta tags, links to css, etc. -->
-<title>DIG 245 Everyone ♥ Math</title>
-<h1>Emily Schmitt and Caroline Sigl</h1>
-
+<link type="text/css" rel="stylesheet" href="assets/css/styles.css">
+<!-- <link rel="stylesheet" href="css/bootstrap.css"/> -->
+<!-- <link rel="stylesheet" href="js/bootstrap.js"/> -->
 
 </head>
-<!-- visible content goes here -->
+
 <body>
-  <h1>DIG 245 Everyone ♥ Math</h1>
+  <header>
+  DIG 245 Everyone ♥ Math <br>
+  Emily Schmitt and Caroline Sigl
+  </header>
+
+  <br>
 
 <div class="parent" id="cake_diagram">
-  <img class="image2" src="assets/img/divisions.png" id="divisions"/>
-  <img class="image1" src="assets/img/1_8_cake.png" id="cake"/>
+  <img class="image2" src="assets/img/divisions.png" id="divisions" alt="transparent divided circle"/>
+  <img class="image1" src="assets/img/1_8_cake.png" id="cake" alt="carrot cake"/>
 </div>
 
 <!-- 1/8 form -->
 <div id="Q1">
-  <p>Welcome to the fractions bakery! It's a great day to eat some cake, but there's only
+  <p>Welcome to the Fractions Bakery! It's a great day to eat some cake, but there's only
     a little bit left! In fractions, how much of the cake is left?<p>
+
+  <br>
 
   <form>
     <label for="question1">Question 1</label>
   <select id="question1" class="form-select form-select-lg" aria-label=".form-select-lg example">
-    <option value="none"></option>
+    <option disabled selected value>select</option>
     <option value="1/4">1/4</option>
       <option value="1/3">1/3</option>
         <option value="1/8">1/8</option> <!-- correct answer -->
@@ -48,10 +57,13 @@
 <div id="Q2" style="display:none;">
   <p>You didn't get a lot of cake yesterday, so you're back! You're picking up a cake and there's a little bit
     more today! How much cake can you buy?</p>
+
+    <br>
+
   <form>
     <label for="question2">Question 2</label>
   <select id="question2" onchange="setResponse2()" class="form-select form-select-lg" aria-label=".form-select-lg example">
-    <option value="none"></option>
+    <option disabled selected value>select</option>
     <option value="1/4">1/4</option> <!-- correct answer -->
       <option value="1/5">1/5</option>
         <option value="2/6">2/6</option>
@@ -65,10 +77,12 @@
   <p>You're having a party tonight, but it's only a couple of people, so you don't need a full cake. The bakery
   offers you this much cake. How much is it?</p>
 
+  <br>
+
   <form>
     <label for="question3">Question 3</label>
   <select id="question3" onchange="setResponse3()" class="form-select form-select-lg" aria-label=".form-select-lg example">
-    <option value="none"></option>
+    <option disabled selected value>select</option>
     <option value="3/4">3/4</option>
       <option value="2/5">2/5</option>
         <option value="7/8">7/8</option>
@@ -82,10 +96,12 @@
   <p>Woah, a few more people showed up to your party than you expected, you better get a little bit more cake.
   How much does the baker offer you?</p>
 
+  <br>
+
   <form>
     <label for="question4">Question 4</label>
   <select id="question4" onchange="setResponse4()" class="form-select form-select-lg" aria-label=".form-select-lg example">
-    <option value="none"></option>
+    <option disabled selected value>select</option>
     <option value="3/4">3/4</option> <!-- correct answer -->
       <option value="2/5">2/5</option>
         <option value="7/8">7/8</option>
@@ -99,10 +115,12 @@
   <p>You've caved in. You're throwing another party and this time you won't be caught off guard. The baker is also using
   more regulated pans, so you can buy this much cake. How much is it?</p>
 
+  <br>
+
   <form>
     <label for="question5">Question 5</label>
   <select id="question5" onchange="setResponse5()" class="form-select form-select-lg" aria-label=".form-select-lg example">
-    <option value="none"></option>
+    <option disabled selected value>select</option>
     <option value="3/4">3/4</option>
       <option value="5/6">5/6</option>
         <option value="1" id="bananas">1</option> <!-- correct answer -->
@@ -112,90 +130,86 @@
 </div>
    <br>
 
-   <input type="submit" class="button" value="submit answer" onclick="javascript:changeQ(); return false;" id = "submit_button"></input>
+   <input type="submit" class="button" value="submit answer" onclick="javascript:changeQ(); return false;" id = "submit_button">
 
    <div id="final" style="display:none;">
-     <p>Congrats on your hard work at the fraction bakery.... you have earned <span id = "total_pts"></span> points!!</p>
+     <p>Congratulations on your hard work at the Fractions Bakery.... you have earned <span id = "total_pts" style="background-color:black; color: white; font-size: 20px;"></span> points!</p>
+     <img class="cc_gif" src="assets/img/carrot_cake_gif.gif" id="cc_gif" alt="gif of carrot cake"/>
    </div>
 
+   <script>
+
+   var total_pts = 0;
+   var question = 1;
+
+   var Q1_response;
+   var Q2_response;
+   var Q3_response;
+   var Q4_response;
+   var Q5_response;
+
+    function setResponse1(){
+      Q1_response = document.getElementById('question1').value;
+    }
+    function setResponse2(){
+      Q2_response = document.getElementById('question2').value;
+    }
+    function setResponse3(){
+      Q3_response = document.getElementById('question3').value;
+    }
+    function setResponse4(){
+      Q4_response = document.getElementById('question4').value;
+    }
+    function setResponse5(){
+      Q5_response = document.getElementById('question5').value;
+    }
+
+   function changeQ() {
+     question += 1;
+     if(question==2){
+       if(Q1_response == "1/8"){
+         total_pts += 1;
+       }
+       document.getElementById("cake").src ="assets/img/1_4_cake.png";
+       document.getElementById("Q1").style.display = 'none';
+       document.getElementById("Q2").style.display = 'block';
+     }
+     if(question==3){
+       if(Q2_response == "1/4"){
+         total_pts += 1;
+       }
+       document.getElementById("cake").src ="assets/img/1_2_cake.png";
+       document.getElementById("Q2").style.display = 'none';
+       document.getElementById("Q3").style.display = 'block';
+     }
+     if(question==4){
+       if(Q3_response == "1/2"){
+         total_pts += 1;
+       }
+       document.getElementById("cake").src ="assets/img/3_4_cake.png";
+       document.getElementById("Q3").style.display = 'none';
+       document.getElementById("Q4").style.display = 'block';
+     }
+     if(question==5){
+       if(Q4_response == "3/4"){
+         total_pts += 1;
+       }
+       document.getElementById("cake").src ="assets/img/full_cake.png";
+       document.getElementById("Q4").style.display = 'none';
+       document.getElementById("Q5").style.display = 'block';
+     }
+
+     if(question==6){
+       if(Q5_response == "1"){
+         total_pts += 1;
+       }
+       document.getElementById("total_pts").innerHTML = total_pts;
+       document.getElementById("cake_diagram").style.display = 'none';
+       document.getElementById("Q5").style.display = 'none';
+       document.getElementById("submit_button").style.display = 'none';
+       document.getElementById("final").style.display = 'block';
+     }
+   }
+   </script>
 </body>
 </html>
-
-<script>
-
-var total_pts = 0;
-var question = 1;
-
-var Q1_response;
-var Q2_response;
-var Q3_response;
-var Q4_response;
-var Q5_response;
-
- function setResponse1(){
-   Q1_response = document.getElementById('question1').value;
- }
- function setResponse2(){
-   Q2_response = document.getElementById('question2').value;
- }
- function setResponse3(){
-   Q3_response = document.getElementById('question3').value;
- }
- function setResponse4(){
-   Q4_response = document.getElementById('question4').value;
- }
- function setResponse5(){
-   Q5_response = document.getElementById('question5').value;
- }
-
-function changeQ() {
-  question += 1;
-  if(question==2){
-    if(Q1_response == "1/8"){
-      total_pts += 1;
-    }
-    document.getElementById("cake").src ="assets/img/1_4_cake.png";
-    document.getElementById("Q1").style.display = 'none';
-    document.getElementById("Q2").style.display = 'block';
-  }
-  if(question==3){
-    if(Q2_response == "1/4"){
-      total_pts += 1;
-    }
-    document.getElementById("cake").src ="assets/img/1_2_cake.png";
-    document.getElementById("Q2").style.display = 'none';
-    document.getElementById("Q3").style.display = 'block';
-  }
-  if(question==4){
-    if(Q3_response == "1/2"){
-      total_pts += 1;
-    }
-    document.getElementById("cake").src ="assets/img/3_4_cake.png";
-    document.getElementById("Q3").style.display = 'none';
-    document.getElementById("Q4").style.display = 'block';
-  }
-  if(question==5){
-    if(Q4_response == "3/4"){
-      total_pts += 1;
-    }
-    document.getElementById("cake").src ="assets/img/full_cake.png";
-    document.getElementById("Q4").style.display = 'none';
-    document.getElementById("Q5").style.display = 'block';
-  }
-
-  if(question==6){
-    if(Q5_response == "1"){
-      total_pts += 1;
-    }
-    document.getElementById("total_pts").innerHTML = total_pts;
-    document.getElementById("cake_diagram").style.display = 'none';
-    document.getElementById("Q5").style.display = 'none';
-    document.getElementById("submit_button").style.display = 'none';
-    document.getElementById("final").style.display = 'block';
-  }
-
-}
-
-
-
-</script>

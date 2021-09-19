@@ -1,4 +1,27 @@
+/* This file contains the style specifications for the math assignment.
+Authors: Caroline Sigl and Emily Schmitt
+Date: September 19, 2021
+Time spent: 8 hours */
 
+body {
+  background-color: #F1efef;
+  margin: 12px;
+  color: #31c64f;
+  font-family: "Arial";
+  font-weight: bold;
+}
+
+header {
+  color: #F1efef;
+  background-color: #fa7f00;
+  font-family: "Arial Black";
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 10px;
+  padding-left: 25px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
 
 .parent {
   position: relative;
@@ -16,8 +39,13 @@
   top: 25px;
   left: 25px;
   z-index: 2;
-
 }
+
+.cc_gif{
+  height: 550px;
+  width: auto;
+}
+
 
 form {
   position: absolute;
@@ -26,9 +54,9 @@ form {
 }
 
  p {
-   position: absolute;
-   top: 120px;
-    left: 25px;
+  position: absolute;
+  top: 120px;
+  left: 25px;
  }
 
  .button {
